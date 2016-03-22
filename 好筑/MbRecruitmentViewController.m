@@ -339,14 +339,14 @@
     self.companyLabel.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
     CGSize companyLabelSize = [self.companyLabel.text sizeWithFont:self.companyLabel.font constrainedToSize:CGSizeMake(100, 100) lineBreakMode:NSLineBreakByWordWrapping];
     self.companyLabel.frame = CGRectMake(15, CGRectGetMaxY(self.horizontal1.frame) + 15, companyLabelSize.width, companyLabelSize.height);
-    [self.scrollView addSubview:self.companyLabel];
+//    [self.scrollView addSubview:self.companyLabel];
     
     
     self.line2 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.companyLabel.frame)+15, CGRectGetMaxY(self.horizontal1.frame) + 10, 1, self.companyLabel.frame.size.height+10)];
     self.line2.backgroundColor = [UIColor colorWithRed:205/255.0 green:205/255.0 blue:205/255.0 alpha:1];
-    [self.scrollView addSubview:self.line2];
+//    [self.scrollView addSubview:self.line2];
     //
-    self.company = [[UITextField alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.line2.frame)+15, CGRectGetMaxY(self.horizontal1.frame) + 10, viewWidth/3, companyLabelSize.height+10)];
+    self.company = [[UITextField alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(self.horizontal1.frame) + 10, viewWidth/3, companyLabelSize.height+10)];
     self.company.delegate = self;
     self.company.returnKeyType = UIReturnKeyDone;
     self.company.font = [UIFont systemFontOfSize:labelText];
@@ -397,11 +397,11 @@
     self.jobIntention.font = [UIFont systemFontOfSize:labelText];
     CGSize jobIntentionSize = [self.jobIntention.text sizeWithFont:self.jobIntention.font constrainedToSize:CGSizeMake(200, 200) lineBreakMode:NSLineBreakByWordWrapping];
     self.jobIntention.frame = CGRectMake(15, CGRectGetMaxY(self.horizontal2.frame) + 15, jobIntentionSize.width, jobIntentionSize.height);
-    [self.scrollView addSubview:self.jobIntention];
+//    [self.scrollView addSubview:self.jobIntention];
     
-    self.line3 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.jobIntention.frame)+15, CGRectGetMaxY(self.horizontal2.frame) + 10, 1, self.jobIntention.frame.size.height+10)];
+    self.line3 = [[UILabel alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(self.horizontal2.frame) + 10, 1, self.jobIntention.frame.size.height+10)];
     self.line3.backgroundColor = [UIColor colorWithRed:205/255.0 green:205/255.0 blue:205/255.0 alpha:1];
-    [self.scrollView addSubview:self.line3];
+//    [self.scrollView addSubview:self.line3];
     
     
     
@@ -411,7 +411,7 @@
     self.type.titleLabel.font = [UIFont systemFontOfSize:labelText];
     [self.type setTitleColor:[UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1] forState:UIControlStateNormal];
     [self.type addTarget:self action:@selector(down:) forControlEvents:UIControlEventTouchUpInside];
-    self.type.frame = CGRectMake(CGRectGetMaxX(self.line3.frame)+15, CGRectGetMaxY(self.horizontal2.frame) + 15, viewWidth- textSize.width - 80 , textSize.height);
+    self.type.frame = CGRectMake(15, CGRectGetMaxY(self.horizontal2.frame) + 15, viewWidth- textSize.width - 80 , textSize.height);
     self.type.tag=1;
     [self.scrollView addSubview:self.type];
     

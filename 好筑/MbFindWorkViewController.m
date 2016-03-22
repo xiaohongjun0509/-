@@ -77,6 +77,9 @@
     [self onCreate];
     [self getMessage];
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 47, viewWidth, viewHeight-109)];
+    [self.tableView registerClass:[MbFindWorkTableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [self.tableView1 registerClass:[MbFindWorkTableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [self.tableView2 registerClass:[MbFindWorkTableViewCell class] forCellReuseIdentifier:@"Cell"];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(moreDongtai)];
@@ -250,16 +253,14 @@
         if (array.count==0) {
 
             
-            self.lists = [MbPaser paserFindWorkByDic:self.dictionary];
-            UIAlertView* alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"没有更多数据了" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alertView show];
-            
+//            self.lists = [MbPaser paserFindWorkByDic:self.dictionary];
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
             });
         }else{
             
-            self.lists = [MbPaser paserFindWorkByDic:dic];
+            [self.lists addObjectsFromArray:[MbPaser paserFindWorkByDic:dic]];
             self.dictionary = dic;
 
             
@@ -415,11 +416,11 @@ static NSString* identifire = @"Cell";
     UITableViewCell* cell2 = nil;
     if (tableView==self.tableView) {
         cell = [tableView dequeueReusableCellWithIdentifier:identifire];
-        if (!cell) {
-            cell = [[MbFindWorkTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifire];
-            cell.delegate = self;
-            return cell;
-        }
+//        if (!cell) {
+//            cell = [[MbFindWorkTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifire];
+//            cell.delegate = self;
+//            return cell;
+//        }
         MbUserInfo* info = [self.lists objectAtIndex:indexPath.row];
         [cell loadContent:info];
          cell.selectionStyle = UITableViewCellSelectionStyleNone;

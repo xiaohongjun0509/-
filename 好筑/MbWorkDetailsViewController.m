@@ -197,17 +197,17 @@
        
     }else if (indexPath.row==1){
         //招聘职位
-        self.recruitment = [UILabel new];
-        self.recruitment.text = @"招聘职位";
-        self.recruitment.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
-        self.recruitment.font = [UIFont systemFontOfSize:labelText];
-        CGSize recruitmentSize = [self.recruitment.text sizeWithFont:self.recruitment.font constrainedToSize:CGSizeMake(200, 200) lineBreakMode:NSLineBreakByWordWrapping];
-        self.recruitment.frame = CGRectMake(15, 15, recruitmentSize.width, recruitmentSize.height);
-        [cell addSubview:self.recruitment];
+//        self.recruitment = [UILabel new];
+//        self.recruitment.text = @"招聘职位";
+//        self.recruitment.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+//        self.recruitment.font = [UIFont systemFontOfSize:labelText];
+//        CGSize recruitmentSize = [self.recruitment.text sizeWithFont:self.recruitment.font constrainedToSize:CGSizeMake(200, 200) lineBreakMode:NSLineBreakByWordWrapping];
+//        self.recruitment.frame = CGRectMake(15, 15, recruitmentSize.width, recruitmentSize.height);
+//        [cell addSubview:self.recruitment];
         
-        self.line2 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.recruitment.frame)+15, 10, 1, self.recruitment.frame.size.height+10)];
-        self.line2.backgroundColor = [UIColor colorWithRed:205/255.0 green:205/255.0 blue:205/255.0 alpha:1];
-        [cell addSubview:self.line2];
+//        self.line2 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.recruitment.frame)+15, 10, 1, self.recruitment.frame.size.height+10)];
+//        self.line2.backgroundColor = [UIColor colorWithRed:205/255.0 green:205/255.0 blue:205/255.0 alpha:1];
+//        [cell addSubview:self.line2];
         
         self.type = [[UILabel alloc]init];
         self.type.text = self.info.position;
@@ -235,7 +235,7 @@
         CGSize dateSize = [self.dateLabel.text sizeWithFont:self.dateLabel.font constrainedToSize:CGSizeMake(200, 200) lineBreakMode:NSLineBreakByWordWrapping];
         self.dateLabel.frame = CGRectMake(viewWidth-15-dateSize.width, 15, dateSize.width, typeSize.height);
         
-        self.type.frame = CGRectMake(CGRectGetMaxX(self.line2.frame)+15, 15, viewWidth - 62 -dateSize.width - recruitmentSize.width, typeSize.height);
+        self.type.frame = CGRectMake(15, 15, viewWidth - 62 -dateSize.width, typeSize.height);
         [cell addSubview:self.type];
         
         [cell addSubview:self.dateLabel];
@@ -248,7 +248,7 @@
         self.company.font = [UIFont systemFontOfSize:labelText];
         CGSize companySize = [self.company.text sizeWithFont:self.company.font constrainedToSize:CGSizeMake(200, 200) lineBreakMode:NSLineBreakByWordWrapping];
         self.company.frame = CGRectMake(15, 15, companySize.width, companySize.height);
-        [cell addSubview:self.company];
+//        [cell addSubview:self.company];
         
    
         
@@ -259,7 +259,7 @@
         self.companyField.numberOfLines = 0;
 //        self.companyField.placeholder = @"请输入公司名称";
         [self.companyField setFont:[UIFont systemFontOfSize:labelText]];
-        self.companyField.frame = CGRectMake(companySize.width+46, 10, viewWidth-76-companySize.width*2, textSize3.height);
+        self.companyField.frame = CGRectMake(15, 15, viewWidth-76, textSize3.height);
         [cell addSubview:self.companyField];
         //直招
         self.recruitmentBtn = [[UIButton alloc]init];
@@ -284,7 +284,7 @@
          
              self.recruitmentBtn.frame = CGRectMake(viewWidth-15-companySize.width, (textSize3.height+20)/2 - (companySize.height+10)/2, companySize.width, companySize.height+10);
         }else{
-            self.line3 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.company.frame)+15, 10, 1, self.company.frame.size.height+10)];
+//            self.line3 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.company.frame)+15, 10, 1, self.company.frame.size.height+10)];
         
             
              self.recruitmentBtn.frame = CGRectMake(viewWidth-15-companySize.width, 10, companySize.width, companySize.height+10);
