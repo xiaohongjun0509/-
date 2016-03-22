@@ -497,27 +497,9 @@ static NSString* identifire = @"Cell";
         [self.navigationController pushViewController:self.workDetailsVC animated:YES];
     }else if (tableView==self.tableView1){
         if (self.tag==1) {
-//            self.positionLabel.text = [self.typeArray objectAtIndex:indexPath.row];
-//            self.positionLabel.font = [UIFont systemFontOfSize:labelText];
-//            self.positionLabel.textColor = [UIColor blackColor];
             self.tag1 = indexPath.row;
             [self.btn1 removeFromSuperview];
             [self create];
-//            if (self.tag1==0) {
-//                [self create];
-//            }else if (self.tag1==1){
-//            
-//            [self create];
-//                
-//            }else if (self.tag1==2){
-//                [self create];
-//            }else if (self.tag1==3){
-//                [self create];
-//            }else if (self.tag1==4){
-//                [self create];
-//            
-//            }
-            
             
         }else if (self.tag==2){
             MbUserInfo* info = [self.placeList objectAtIndex:indexPath.row];
@@ -596,6 +578,12 @@ static NSString* identifire = @"Cell";
     self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.frame = CGRectMake(15, (viewHeight - 344)/2, viewWidth - 30, 40);
     [self.btn2 addSubview:self.titleLabel];
+    
+//   UI
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(15, 0, 0, 0)];
+    [button setTitle:@"back" forState:UIControlStateNormal];
+    [button sizeToFit];
+    [self.titleLabel addSubview:button];
     
     //列表
     self.tableView2 = [[UITableView alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(self.titleLabel.frame), viewWidth - 30, 240)];
