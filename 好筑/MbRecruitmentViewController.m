@@ -1035,39 +1035,6 @@
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (tableView==self.tableView) {
-//        if (indexPath.row<6) {
-//            return textSize.height+30;
-//        }else if (indexPath.row==6){
-//            
-//            return textSize.height+30;
-//            
-//        }
-//        
-//        else if (indexPath.row==7){
-//            return textSize.height+30;
-//            
-//        }else if (indexPath.row==8){
-//            return textSize.height+30;
-//            
-//            
-//        }else if (indexPath.row==9){
-//            return textSize.height+30;
-//            
-//        }else if (indexPath.row==10){
-//            
-//            return textSize.height+30;
-//        }
-//        else if (indexPath.row==11){
-//            
-//            return 70;
-//        }
-//
-//    }else{
-//    
-//    
-//        return 44;
-//    }
     return 44;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -1123,29 +1090,7 @@
         [self.type setTitle:string forState:UIControlStateNormal];
         [self.type setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         
-        
-        
-//        if (self.tag1==0)
-//            NSString* string = [self.array1 objectAtIndex:indexPath.row];
-//            [self.type setTitle:string forState:UIControlStateNormal];
-//            [self.type setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        }else if (self.tag1==1){
-//            NSString* string = [self.array2 objectAtIndex:indexPath.row];
-//            [self.type setTitle:string forState:UIControlStateNormal];
-//            [self.type setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        }else if (self.tag1==2){
-//            NSString* string = [self.array3 objectAtIndex:indexPath.row];
-//            [self.type setTitle:string forState:UIControlStateNormal];
-//            [self.type setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        }else if (self.tag1==3){
-//            NSString* string = [self.array4 objectAtIndex:indexPath.row];
-//            [self.type setTitle:string forState:UIControlStateNormal];
-//            [self.type setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        }else if (self.tag1==4){
-//            NSString* string = [self.array5 objectAtIndex:indexPath.row];
-//            [self.type setTitle:string forState:UIControlStateNormal];
-//            [self.type setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        }
+
         
         [self.btn2 removeFromSuperview];
     }

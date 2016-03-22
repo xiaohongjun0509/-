@@ -591,7 +591,7 @@
         return textSize.height+30;
         
     }else if (indexPath.row==8){
-  
+//        return 44;
         return textSize1.height+30;
     }else if (indexPath.row==9){
     
@@ -603,7 +603,11 @@
     }else if (indexPath.row==11){
     
         return textSize.height+30;
+    }else if (indexPath.row==7){
+        
+        return textSize1.height+30;
     }
+
     return 66;
 
 }
