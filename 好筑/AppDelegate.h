@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MbHomePageViewController.h"
+#import "MbReleaseViewController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-
+@property(nonatomic,strong)MbHomePageViewController* homeVC;
+@property(nonatomic,strong)MbReleaseViewController* releaseVC;
 @end
 
