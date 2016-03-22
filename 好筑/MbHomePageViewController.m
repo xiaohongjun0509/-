@@ -58,6 +58,7 @@
     NSURL *url = [NSURL URLWithString:encodedString];
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     NSURLSession* session = [NSURLSession sharedSession];
+  
     NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];

@@ -285,17 +285,17 @@
     self.tableView3.delegate = self;
     self.tableView3.dataSource = self;
     
-    [self.tableView1 addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(freshDongtai1)];
-    [self.tableView1 addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(moreDongtai1)];
-    [self.tableView1.header beginRefreshing];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(moreDongtai1)];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(freshDongtai1)];
+    [self.tableView1.mj_header beginRefreshing];
     
-    [self.tableView2 addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(freshDongtai2)];
-    [self.tableView2 addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(moreDongtai2)];
-    [self.tableView2.header beginRefreshing];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(moreDongtai2)];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(freshDongtai2)];
+    [self.tableView2.mj_header beginRefreshing];
     
-    [self.tableView3 addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(freshDongtai3)];
-    [self.tableView3 addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(moreDongtai3)];
-    [self.tableView3.header beginRefreshing];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(moreDongtai3)];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(freshDongtai3)];
+    [self.tableView3.mj_header beginRefreshing];
     
     [self.scrollView addSubview:self.tableView1];
     [self.scrollView addSubview:self.tableView2];

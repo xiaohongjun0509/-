@@ -221,7 +221,7 @@
     //搜索框
     self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.companyName.frame)+21,CGRectGetMaxY(self.horizontal1.frame) + 8, viewWidth-labelSize.width*3.2+10, labelSize.height+14)];
     self.searchBar.delegate = self;
-    self.searchBar.placeholder = @"请填写简称";
+    self.searchBar.placeholder = @"请填写资质";
     self.searchBar.backgroundColor = [UIColor blueColor];
     self.searchBar.layer.cornerRadius = 4;
     self.searchBar.layer.masksToBounds = YES;
@@ -323,7 +323,7 @@
     [self.scrollView addSubview:self.line3];
     
     self.businessCooperationView = [[UITextView alloc]init];
-   
+//    self.businessCooperationView.
 //    if (self.businessCooperationView.text.length==0) {
 //        self.businessCooperationView.text = [self.dic objectForKey:@"textView"];
 //    }

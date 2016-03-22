@@ -120,14 +120,14 @@
     NSString *currentDateStr = [dateFormatter stringFromDate: detaildate];
     self.dateLabel.text = [NSString stringWithFormat:@"%@更新",currentDateStr];
     self.dateLabel.font = [UIFont systemFontOfSize:labelText-1];
-    self.dateLabel.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.dateLabel.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     CGSize dateSize = [self.dateLabel.text sizeWithFont:self.dateLabel.font constrainedToSize:CGSizeMake(300, 300) lineBreakMode:NSLineBreakByWordWrapping];
     self.dateLabel.frame = CGRectMake(15, CGRectGetMaxY(self.companyName.frame)+10, dateSize.width, dateSize.height);
     [self.scrollView addSubview:self.dateLabel];
     
     //横线1
     self.horizontal1 = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.dateLabel.frame)+15, viewWidth, 1)];
-    self.horizontal1.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.horizontal1.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.horizontal1];
     
     //资质
@@ -135,7 +135,7 @@
     self.qualifications.text = @"资质";
     self.qualifications.textAlignment = NSTextAlignmentRight;
     self.qualifications.font = [UIFont systemFontOfSize:labelText];
-    self.qualifications.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.qualifications.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     
     self.qualifications.frame = CGRectMake(15, CGRectGetMaxY(self.horizontal1.frame)+13, textSize.width, textSize.height);
     [self.scrollView addSubview:self.qualifications];
@@ -174,87 +174,27 @@
     }
     
     //竖线1
-    self.line1 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.qualifications.frame)+10,CGRectGetMaxY(self.horizontal1.frame) + 10, 1, CGRectGetMaxY(self.btn.frame)-CGRectGetMaxY(self.horizontal1.frame)-5)];
-    self.line1.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
-    [self.scrollView addSubview:self.line1];
-    
-    /*
-    if (self.info.intelligence.count>0)
-    {
-        CGFloat w = self.qualifications.frame.size.width+30;//保存前一个button的宽以及前一个button距离屏幕边缘的距离
-        CGFloat h = CGRectGetMaxY(self.horizontal1.frame)+10;//用来控制button距离父视图的高
-        for (int i = 0; i < self.info.intelligence.count; i++) {
-            self.btn = [UIButton buttonWithType:UIButtonTypeSystem];
-            self.btn.tag = 100 + i;
-            [self.btn setUserInteractionEnabled:NO];
-            [self.btn setTitleColor:[UIColor colorWithRed:85/255.0 green:85/255.0 blue:85/255.0 alpha:1] forState:UIControlStateNormal];
-            
-            
-            NSDictionary *attributes = nil;
-            if (viewWidth==320) {
-                self.btn.titleLabel.font = [UIFont systemFontOfSize:labelText-3];
-                attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:labelText-3]};
-            }else{
-                self.btn.titleLabel.font = [UIFont systemFontOfSize:labelText-4];
-                attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:labelText-4]};
-            }
-            
-            //根据计算文字的大小
-            
-            
-            CGFloat length = [[self.info.intelligence[i] objectForKey:@"aptitude"] boundingRectWithSize:CGSizeMake(viewWidth-self.qualifications.frame.size.width-45, 2000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size.width;
-            
-            
-            
-            CGFloat heigth = [[self.info.intelligence[i] objectForKey:@"aptitude"] boundingRectWithSize:CGSizeMake(viewWidth, 2000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size.height;
-            //为button赋值
-            [self.btn setTitle:[self.info.intelligence[i] objectForKey:@"aptitude"] forState:UIControlStateNormal];
-            //设置button的frame
-            self.btn.frame = CGRectMake(w, h, length+10, heigth+4);
-
-          
-            //当button的位置超出屏幕边缘时换行 320 只是button所在父视图的宽度
-            if(w + length + 10 + self.qualifications.frame.size.width > viewWidth){
-           
-                w = 0; //换行时将w置为0
-                h = h + self.btn.frame.size.height + 10;//距离父视图也变化
-
-                
-                self.btn.frame = CGRectMake(self.qualifications.frame.size.width+30, h, length + 10, heigth+4);//重设button的frame
-
-            }
-            
-          
-            w = self.btn.frame.size.width + self.btn.frame.origin.x;
-
-            
-            
-            [self.scrollView addSubview:self.btn];
-        }
-        //竖线1
-        self.line1 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.qualifications.frame)+10,CGRectGetMaxY(self.horizontal1.frame) + 10, 1, CGRectGetMaxY(self.btn.frame)-CGRectGetMaxY(self.horizontal1.frame)-5)];
-        self.line1.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
-        [self.scrollView addSubview:self.line1];
-    }
-    */
+//    self.line1 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.qualifications.frame)+10,CGRectGetMaxY(self.horizontal1.frame) + 10, 1, CGRectGetMaxY(self.btn.frame)-CGRectGetMaxY(self.horizontal1.frame)-5)];
+//    self.line1.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
+//    [self.scrollView addSubview:self.line1];
     
     
     //横线2
     self.horizontal2 = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.btn.frame)+15, viewWidth, 1)];
-    self.horizontal2.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.horizontal2.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.horizontal2];
     
     //区域
     self.region = [[UILabel alloc]init];
     self.region.text = @"       区域";
-    self.region.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.region.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     self.region.font = [UIFont systemFontOfSize:labelText];
     CGSize regionSize = [self.region.text sizeWithFont:self.region.font constrainedToSize:CGSizeMake(200, 200) lineBreakMode:NSLineBreakByWordWrapping];
     self.region.frame = CGRectMake(15,CGRectGetMaxY(self.horizontal2.frame) + 15, regionSize.width, regionSize.height);
     [self.scrollView addSubview:self.region];
     
     self.line2 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.region.frame)+10,CGRectGetMaxY(self.horizontal2.frame) + 10, 1, self.region.frame.size.height+10)];
-    self.line2.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.line2.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.line2];
     
     self.regionLabel = [[UILabel alloc]init];
@@ -267,7 +207,7 @@
     
     //横线3
     self.horizontal3 = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.region.frame)+15, viewWidth, 1)];
-    self.horizontal3.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.horizontal3.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.horizontal3];
 
     
@@ -277,13 +217,13 @@
     self.workplace = [[UILabel alloc]init];
     self.workplace.text = @"办公地址";
     self.workplace.font = [UIFont systemFontOfSize:labelText];
-    self.workplace.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.workplace.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     
     self.workplace.frame = CGRectMake(15, CGRectGetMaxY(self.horizontal3.frame) + 15, textSize.width, textSize.height);
     [self.scrollView addSubview:self.workplace];
     //竖线3
     self.line3 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.workplace.frame)+10,CGRectGetMaxY(self.horizontal3.frame) + 10, 1, textSize.height+10)];
-    self.line3.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.line3.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.line3];
     
     //地址
@@ -297,7 +237,7 @@
     [self.scrollView addSubview:self.place];
     //横线4
     self.horizontal4 = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.workplace.frame)+15, viewWidth, 1)];
-    self.horizontal4.backgroundColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1];
+    self.horizontal4.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.horizontal4];
     
     
@@ -305,7 +245,7 @@
     self.details = [[UILabel alloc]init];
     self.details.text = @"详情介绍";
     self.details.font = [UIFont systemFontOfSize:labelText];
-    self.details.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.details.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     CGSize detailsSize = [self.details.text sizeWithFont:self.details.font constrainedToSize:CGSizeMake(200, 200) lineBreakMode:NSLineBreakByWordWrapping];
     self.details.frame = CGRectMake(15, CGRectGetMaxY(self.horizontal4.frame)+15, detailsSize.width, detailsSize.height);
     [self.scrollView addSubview:self.details];
@@ -329,7 +269,7 @@
         self.line4 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.details.frame)+10, CGRectGetMaxY(self.horizontal4.frame) + 10, 1, detailsIntroductionSize.height+10)];
     }
     
-    self.line4.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.line4.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.line4];
     self.detailsIntroduction.frame = CGRectMake(CGRectGetMaxX(self.line4.frame)+10, CGRectGetMaxY(self.horizontal4.frame) + 15, textSize1.width, textSize1.height);
     [self.scrollView addSubview:self.detailsIntroduction];
@@ -337,7 +277,7 @@
     
     //横线5
     self.horizontal5 = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.detailsIntroduction.frame)+15, viewWidth, 1)];
-    self.horizontal5.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.horizontal5.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.horizontal5];
     
     
@@ -346,13 +286,13 @@
     self.contactPerson.text = @"联系人";
     self.contactPerson.font = [UIFont systemFontOfSize:labelText];
     self.contactPerson.textAlignment = NSTextAlignmentRight;
-    self.contactPerson.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.contactPerson.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     
     self.contactPerson.frame = CGRectMake(15,CGRectGetMaxY(self.horizontal5.frame) + 15, textSize.width, textSize.height);
     [self.scrollView addSubview:self.contactPerson];
     //竖线5
     self.line5 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.contactPerson.frame)+10,CGRectGetMaxY(self.horizontal5.frame) + 10, 1, textSize.height+10)];
-    self.line5.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.line5.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.line5];
     
     //名字
@@ -366,20 +306,20 @@
     
     //横线6
     self.horizontal6 = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.contactPerson.frame)+15, viewWidth, 1)];
-    self.horizontal6.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.horizontal6.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.horizontal6];
     
     //电话
     self.telephone = [[UILabel alloc]init];
     self.telephone.text = @"电话";
     self.telephone.font = [UIFont systemFontOfSize:labelText];
-    self.telephone.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.telephone.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     self.telephone.textAlignment = NSTextAlignmentRight;
     self.telephone.frame = CGRectMake(15,CGRectGetMaxY(self.horizontal6.frame) + 15, textSize.width, textSize.height);
     [self.scrollView addSubview:self.telephone];
     //竖线6
     self.line6 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.workplace.frame)+10,CGRectGetMaxY(self.horizontal6.frame) + 10, 1, textSize.height+10)];
-    self.line6.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.line6.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.line6];
     
     //号码
@@ -394,7 +334,7 @@
     
 //横线7
     self.horizontal7 = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.telephone.frame)+15, viewWidth, 1)];
-    self.horizontal7.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+    self.horizontal7.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
     [self.scrollView addSubview:self.horizontal7];
     
     
@@ -498,7 +438,7 @@ static NSString* identifire = @"Cell";
         NSString *currentDateStr = [dateFormatter stringFromDate: detaildate];
         self.dateLabel.text = [NSString stringWithFormat:@"%@更新",currentDateStr];
         self.dateLabel.font = [UIFont systemFontOfSize:labelText-1];
-        self.dateLabel.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.dateLabel.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
         CGSize dateSize = [self.dateLabel.text sizeWithFont:self.dateLabel.font constrainedToSize:CGSizeMake(300, 300) lineBreakMode:NSLineBreakByWordWrapping];
         self.dateLabel.frame = CGRectMake(15, CGRectGetMaxY(self.companyName.frame)+10, dateSize.width, dateSize.height);
         [cell addSubview:self.dateLabel];
@@ -508,7 +448,7 @@ static NSString* identifire = @"Cell";
         self.qualifications.text = @"资质";
         self.qualifications.textAlignment = NSTextAlignmentRight;
         self.qualifications.font = [UIFont systemFontOfSize:labelText];
-        self.qualifications.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.qualifications.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
         
         self.qualifications.frame = CGRectMake(15, cell.frame.size.height/2-textSize.height/2, textSize.width, textSize.height);
         [cell addSubview:self.qualifications];
@@ -553,7 +493,7 @@ static NSString* identifire = @"Cell";
                 
                 //竖线1
                 self.line1 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.qualifications.frame)+10, 10, 1, self.qualifications.frame.size.height+10)];
-                self.line1.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+                self.line1.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
                 [cell addSubview:self.line1];
                 
                 //当button的位置超出屏幕边缘时换行 320 只是button所在父视图的宽度
@@ -569,7 +509,7 @@ static NSString* identifire = @"Cell";
                     
                     //竖线1
                     self.line1 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.qualifications.frame)+10, 10, 1, 40)];
-                    self.line1.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+                    self.line1.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
                     [cell addSubview:self.line1];
                 }
                 
@@ -584,7 +524,7 @@ static NSString* identifire = @"Cell";
         }else{
             //竖线1
             self.line1 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.qualifications.frame)+10, 10, 1, self.qualifications.frame.size.height+10)];
-            self.line1.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+            self.line1.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
             [cell addSubview:self.line1];
         
         }
@@ -599,20 +539,20 @@ static NSString* identifire = @"Cell";
         self.workplace = [[UILabel alloc]init];
         self.workplace.text = @"办公地址";
         self.workplace.font = [UIFont systemFontOfSize:labelText];
-        self.workplace.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.workplace.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
 
         self.workplace.frame = CGRectMake(15, 15, textSize.width, textSize.height);
         [cell addSubview:self.workplace];
         //竖线2
         self.line2 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.workplace.frame)+10, 10, 1, textSize.height+10)];
-        self.line2.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.line2.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
         [cell addSubview:self.line2];
         
         //地址
         self.place = [[UILabel alloc]init];
         self.place.text = self.info.address;
         self.place.font = [UIFont systemFontOfSize:labelText];
-        self.place.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.place.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
         CGSize placeSize = [self.place.text sizeWithFont:self.place.font constrainedToSize:CGSizeMake(viewWidth-61-textSize.width, 300) lineBreakMode:NSLineBreakByWordWrapping];
         self.place.frame = CGRectMake(CGRectGetMaxX(self.line2.frame)+10, 15, placeSize.width, placeSize.height);
         [cell addSubview:self.place];
@@ -622,7 +562,7 @@ static NSString* identifire = @"Cell";
         self.details = [[UILabel alloc]init];
         self.details.text = @"详情介绍";
         self.details.font = [UIFont systemFontOfSize:labelText];
-        self.details.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.details.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
         CGSize detailsSize = [self.details.text sizeWithFont:self.details.font constrainedToSize:CGSizeMake(200, 200) lineBreakMode:NSLineBreakByWordWrapping];
         self.details.frame = CGRectMake(15, (textSize1.height+30)/2 - detailsSize.height/2, detailsSize.width, detailsSize.height);
         [cell addSubview:self.details];
@@ -635,7 +575,7 @@ static NSString* identifire = @"Cell";
         self.detailsIntroduction.text = self.info.tedail;
         self.detailsIntroduction.numberOfLines = 0;
         self.detailsIntroduction.font = [UIFont systemFontOfSize:labelText];
-        self.detailsIntroduction.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.detailsIntroduction.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
         CGSize detailsIntroductionSize = [self.detailsIntroduction.text sizeWithFont:self.detailsIntroduction.font constrainedToSize:CGSizeMake(viewWidth-51-detailsSize.width, 300) lineBreakMode:NSLineBreakByWordWrapping];
         
         
@@ -646,7 +586,7 @@ static NSString* identifire = @"Cell";
             self.line3 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.details.frame)+10, 10, 1, detailsIntroductionSize.height+10)];
         }
       
-        self.line3.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.line3.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
         [cell addSubview:self.line3];
         self.detailsIntroduction.frame = CGRectMake(CGRectGetMaxX(self.line3.frame)+10, 15, textSize1.width, textSize1.height);
         [cell addSubview:self.detailsIntroduction];
@@ -657,20 +597,20 @@ static NSString* identifire = @"Cell";
         self.contactPerson.text = @"联系人";
         self.contactPerson.font = [UIFont systemFontOfSize:labelText];
         self.contactPerson.textAlignment = NSTextAlignmentRight;
-        self.contactPerson.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.contactPerson.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
   
         self.contactPerson.frame = CGRectMake(15, 15, textSize.width, textSize.height);
         [cell addSubview:self.contactPerson];
         //竖线4
         self.line4 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.contactPerson.frame)+10, 10, 1, textSize.height+10)];
-        self.line4.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.line4.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
         [cell addSubview:self.line4];
         
         //名字
         self.name = [[UILabel alloc]init];
         self.name.text = self.info.contact;
         self.name.font = [UIFont systemFontOfSize:labelText];
-        self.name.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.name.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
         CGSize nameSize = [self.name.text sizeWithFont:self.name.font constrainedToSize:CGSizeMake(viewWidth-61-textSize.width, 300) lineBreakMode:NSLineBreakByWordWrapping];
         self.name.frame = CGRectMake(CGRectGetMaxX(self.line4.frame)+10, 15, nameSize.width, nameSize.height);
         [cell addSubview:self.name];
@@ -681,20 +621,20 @@ static NSString* identifire = @"Cell";
         self.telephone = [[UILabel alloc]init];
         self.telephone.text = @"电话";
         self.telephone.font = [UIFont systemFontOfSize:labelText];
-        self.telephone.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.telephone.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
         self.telephone.textAlignment = NSTextAlignmentRight;
         self.telephone.frame = CGRectMake(15, 15, textSize.width, textSize.height);
         [cell addSubview:self.telephone];
         //竖线5
         self.line5 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.workplace.frame)+10, 10, 1, textSize.height+10)];
-        self.line5.backgroundColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.line5.backgroundColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
         [cell addSubview:self.line5];
         
         //号码
         self.telephoneNumber = [[UILabel alloc]init];
         self.telephoneNumber.text = self.info.phone;
         self.telephoneNumber.font = [UIFont systemFontOfSize:labelText];
-        self.telephoneNumber.textColor = [UIColor colorWithRed:119/255.0 green:119/255.0 blue:119/255.0 alpha:1];
+        self.telephoneNumber.textColor = [UIColor colorWithRed:189/255.0 green:189/255.0 blue:189/255.0 alpha:1];
 
         CGSize telephoneNumberSize = [self.telephoneNumber.text sizeWithFont:self.telephoneNumber.font constrainedToSize:CGSizeMake(viewWidth-61-textSize.width, 300) lineBreakMode:NSLineBreakByWordWrapping];
         self.telephoneNumber.frame = CGRectMake(CGRectGetMaxX(self.line5.frame)+10, 15, telephoneNumberSize.width, telephoneNumberSize.height);

@@ -62,8 +62,8 @@
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, viewWidth, viewHeight-50-64)];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(freshDongtai)];
-    [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(moreDongtai)];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(moreDongtai)];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(freshDongtai)];
     [self.tableView.header beginRefreshing];
     [self.tableView reloadData];
     [self.view addSubview:self.tableView];
@@ -101,8 +101,7 @@
             
             
             self.lists = [MbPaser paserEnterpriseByDic:self.dictionary];
-            UIAlertView* alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"没有更多数据了" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alertView show];
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];

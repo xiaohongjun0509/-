@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "TableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    self.window.rootViewController = [TableViewController new];
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 

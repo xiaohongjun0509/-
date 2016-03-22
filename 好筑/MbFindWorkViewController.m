@@ -79,10 +79,12 @@
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 47, viewWidth, viewHeight-109)];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(freshDongtai)];
-    [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(moreDongtai)];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(moreDongtai)];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(freshDongtai)];
+
+   
     
-    [self.tableView.header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 
     [self.tableView reloadData];
     [self.view addSubview:self.tableView];
