@@ -1230,41 +1230,6 @@
         NSDictionary* dic = [info.positionArray objectAtIndex:indexPath.row];
         cell.textLabel.text = [dic objectForKey:@"positioname"];
         
-
-        
-        
-        
-//        if (self.tag1==0) {
-//          
-//            
-//            
-//        }else if (self.tag1==1){
-//            
-////            cell.textLabel.text = [self.array2 objectAtIndex:indexPath.row];
-//            MbUserInfo* info = self.placeList[self.tag1];
-//            for (NSDictionary* dic in info.positionArray) {
-//                cell.textLabel.text = [dic objectForKey:@"positioname"];
-//            }
-//        }else if (self.tag1==2){
-////            cell.textLabel.text = [self.array3 objectAtIndex:indexPath.row];
-//            MbUserInfo* info = self.placeList[self.tag1];
-//            for (NSDictionary* dic in info.positionArray) {
-//                cell.textLabel.text = [dic objectForKey:@"positioname"];
-//            }
-//        }else if (self.tag1==3){
-////            cell.textLabel.text = [self.array4 objectAtIndex:indexPath.row];
-//            MbUserInfo* info = self.placeList[self.tag1];
-//            for (NSDictionary* dic in info.positionArray) {
-//                cell.textLabel.text = [dic objectForKey:@"positioname"];
-//            }
-//        }else if (self.tag1==4){
-////            cell.textLabel.text = [self.array5 objectAtIndex:indexPath.row];
-//            MbUserInfo* info = self.placeList[self.tag1];
-//            for (NSDictionary* dic in info.positionArray) {
-//                cell.textLabel.text = [dic objectForKey:@"positioname"];
-//            }
-//        }
-        
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.font = [UIFont systemFontOfSize:labelText];
         
@@ -1336,7 +1301,7 @@
             
             self.tag1 = indexPath.row;
           
-            [self.btn1 removeFromSuperview];
+            self.btn1.hidden = YES;
             [self create];
 
         }else if (self.tag==5){
@@ -1345,7 +1310,7 @@
             [self.moneyBtn setTitle:info.pay forState:UIControlStateNormal];
             [self.moneyBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         }
-        [self.btn1 removeFromSuperview];
+        self.btn1.hidden = YES;
         
     }else if (tableView==self.tableView2){
 
@@ -1425,6 +1390,13 @@
     self.titleLabel.frame = CGRectMake(15, (viewHeight - 344)/2, viewWidth - 30, 40);
     [self.btn2 addSubview:self.titleLabel];
     
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(15, 0, 0, 0)];
+    [button setBackgroundImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    [button sizeToFit];
+    
+    button.frame = CGRectMake(20, CGRectGetMinY(self.titleLabel.frame) + 5, 30, 30);
+    [button addTarget:self action:@selector(dismissBtn2) forControlEvents:UIControlEventTouchUpInside];
+    [self.btn2 addSubview:button];
     //列表
     self.tableView2 = [[UITableView alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(self.titleLabel.frame), viewWidth - 30, 240)];
     self.tableView2.dataSource = self;
@@ -1433,6 +1405,11 @@
     [self.tableView2 reloadData];
     [self.btn2 addSubview:self.tableView2];
     
+}
+
+-(void)dismissBtn2{
+    [self.btn2 removeFromSuperview];
+    self.btn1.hidden = NO;
 }
 
 

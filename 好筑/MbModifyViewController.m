@@ -64,37 +64,20 @@
 }
 -(void)onCreate{
     
-    self.view1 = [[UIView alloc]initWithFrame:CGRectMake(15, 10, viewWidth-30, 183)];
+    self.view1 = [[UIView alloc]initWithFrame:CGRectMake(15, 10, viewWidth-30, 138)];
     self.view1.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.view1];
     
     
-    self.line1 = [[UILabel alloc]initWithFrame:CGRectMake(0, 45, viewWidth-30, 1)];
-    self.line1.backgroundColor = [UIColor colorWithRed:227/255.0 green:227/255.0 blue:229/255.0 alpha:1];
-    [self.view1 addSubview:self.line1];
+  
     
-    self.line2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 91, viewWidth-30, 1)];
+    self.line2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 44, viewWidth-30, 1)];
     self.line2.backgroundColor = [UIColor colorWithRed:227/255.0 green:227/255.0 blue:229/255.0 alpha:1];
     [self.view1 addSubview:self.line2];
     
-    self.line3 = [[UILabel alloc]initWithFrame:CGRectMake(0, 137, viewWidth-30, 1)];
+    self.line3 = [[UILabel alloc]initWithFrame:CGRectMake(0, 89, viewWidth-30, 1)];
     self.line3.backgroundColor = [UIColor colorWithRed:227/255.0 green:227/255.0 blue:229/255.0 alpha:1];
     [self.view1 addSubview:self.line3];
-    //
-    self.headImage = [[UIImageView alloc]initWithFrame:CGRectMake(20, 12.5, 20, 20)];
-    self.headImage.image = [UIImage imageNamed:@"zhanghu.png"];
-    [self.view1 addSubview:self.headImage];
-  
-    
-    self.telePhoneField = [[UITextField alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.headImage.frame)+10,10, (self.view1.frame.size.width-70)/3*2, 25)];
-    self.telePhoneField.textColor = [UIColor blackColor];
-    self.telePhoneField.font = [UIFont systemFontOfSize:labelText];
-    self.telePhoneField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    self.telePhoneField.placeholder = @"请输入账号";
-    self.telePhoneField.delegate = self;
-    [self.telePhoneField setValue:[UIFont systemFontOfSize:labelText] forKeyPath:@"_placeholderLabel.font"];
-    [self.telePhoneField setValue:[UIColor colorWithRed:227/255.0 green:227/255.0 blue:229/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-    [self.view1 addSubview:self.telePhoneField];
     
     
    

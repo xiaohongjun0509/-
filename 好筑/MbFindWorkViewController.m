@@ -498,7 +498,7 @@ static NSString* identifire = @"Cell";
     }else if (tableView==self.tableView1){
         if (self.tag==1) {
             self.tag1 = indexPath.row;
-            [self.btn1 removeFromSuperview];
+            self.btn1.hidden = YES;
             [self create];
             
         }else if (self.tag==2){
@@ -581,9 +581,13 @@ static NSString* identifire = @"Cell";
     
 //   UI
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(15, 0, 0, 0)];
-    [button setTitle:@"back" forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
     [button sizeToFit];
-    [self.titleLabel addSubview:button];
+    
+    button.frame = CGRectMake(20, CGRectGetMinY(self.titleLabel.frame) + 5, 30, 30);
+    [button addTarget:self action:@selector(dismissBtn2) forControlEvents:UIControlEventTouchUpInside];
+    [self.btn2 addSubview:button];
+    
     
     //列表
     self.tableView2 = [[UITableView alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(self.titleLabel.frame), viewWidth - 30, 240)];
@@ -595,21 +599,33 @@ static NSString* identifire = @"Cell";
 
 }
 
+
+-(void)dismissBtn2{
+    [self.btn2 removeFromSuperview];
+    self.btn1.hidden = NO;
+}
 //职位按钮方法
 -(void)position:(UIButton*)sender{
     [self getPosition];
     
     self.tag = sender.tag;
    
+    [self createBtn1];
+    
+    
+}
+
+- (void)createBtn1{
+    [self.btn1 removeFromSuperview];
     self.btn1 = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, viewWidth, viewHeight)];
     //图层透明，控件不透明
     UIColor *color = [UIColor blackColor];
     self.btn1.backgroundColor = [color colorWithAlphaComponent:0.5];
     //    self.view1.backgroundColor = [UIColor blackColor];
     //    self.view1.alpha = 0.7;
-        [self.btn1 addTarget:self action:@selector(btn1:) forControlEvents:UIControlEventTouchUpInside];
+    [self.btn1 addTarget:self action:@selector(btn1:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.btn1];
-
+    
     
     //标题
     self.titleLabel = [[UILabel alloc]init];
@@ -629,9 +645,8 @@ static NSString* identifire = @"Cell";
     self.tableView.scrollEnabled = NO;
     [self.tableView1 reloadData];
     [self.btn1 addSubview:self.tableView1];
-    
-    
 }
+
 //地区按钮方法
 -(void)location:(UIButton*)sender{
     [self getPlace];
