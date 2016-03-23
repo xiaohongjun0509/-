@@ -260,7 +260,7 @@
             });
         }else{
             
-            [self.lists addObjectsFromArray:[MbPaser paserFindWorkByDic:dic]];
+            self.lists = [MbPaser paserFindWorkByDic:dic];
             self.dictionary = dic;
 
             
